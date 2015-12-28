@@ -1,0 +1,20 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-10">
+			<pre>
+				{{question.text}}
+			</pre>
+			<table>
+				<tr ng-repeat="a in question.answers">
+					<td>
+						<input type="checkbox" ng-model="a.userChoice"></input>
+					</td>
+					<td>
+						<pre>{{a.text}}</pre>
+					</td>
+				</tr>
+			</table>
+			<button ng-click="answerOnQuestion()">Next question -></button>
+		</div>
+	</div>
+</div>

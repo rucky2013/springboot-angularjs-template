@@ -1,0 +1,25 @@
+<div class="container-fluid">
+	<a href="#/subject">back to subjects</a>
+	<div>
+		<label for="section">Section name : </label>
+		<input type="text" name="section" ng-model="section.name"></input>
+		<button ng-click="add()">+Add section</button>
+	</div>
+	<table class="table">
+	
+		<tr ng-repeat='s in sections'>
+			<td>
+			  {{s.id}}
+			</td>
+			<td>
+			  {{s.name}}
+			</td>
+			<td>
+			  <a href="#/list/questions/{{s.id}}">List questions in this section</a>
+			</td>
+			<td>
+				<a href="#/add/question/{{s.id}}">Add question to this section</a>
+			</td>
+		</tr>
+	</table>
+</div>

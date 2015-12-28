@@ -1,0 +1,5 @@
+@CHARSET "UTF-8";
+.like-link{
+	cursor: pointer;
+	color: #00f;
+}

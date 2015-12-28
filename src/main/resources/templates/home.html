@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+		xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+		layout:decorator="layout">
+<head>
+<title>Spring boot template project</title>
+</head>
+<body> 
+
+<div layout:fragment="content" class="container-fluid" ng-app="demoApp">
+	<ng-view></ng-view>
+</div>
+
+<div layout:fragment="scripts">
+	<!-- Angular Stuff -->
+	<script src="/js/angular.min.js"> </script>
+	<script src="/js/angular-route.min.js"> </script>
+	<script src="/js/angular-resource.min.js"> </script>
+	<script src="/js/service/crudService.js"> </script>
+	<script src="/js/app/demoApp.js"> </script>
+</div>
+</body>
+</html>

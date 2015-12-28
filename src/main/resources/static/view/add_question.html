@@ -1,0 +1,36 @@
+<div class="container-fluid">
+	
+	<div ng-show="showQuestionView">
+		<pre>{{questionText}}</pre>
+	</div>
+	
+	<div ng-show="showQuestionForm">
+		<label for="question_text">Question text :</label><br/>
+		<textarea rows="10" cols="100" name="question_text" ng-model="questionText"></textarea><br/>
+		<button ng-click="setQuestionText()">Save question text</button><br/>
+	</div>
+	
+	<div ng-show="showAnswerForm">
+		<label for="answer_text">Answer text :</label><br/>
+		<textarea rows="2" cols="120" name="answer_text" ng-model="answerText"></textarea><br/>
+		<button ng-click="addAnswerToQuestion()">Add answer</button><br/>
+	</div>
+	
+	<button ng-show="showSaveQuestionBtn" ng-click="saveQuestion()">Save question</button>
+	
+	<table class="table">
+		<tr ng-repeat="a in answers">
+			<td>
+			 {{$index}}
+			</td>
+			<td>
+			 <pre>{{a.text}}</pre>
+			</td>
+			<td>
+			 <input type="checkbox" ng-model="a.isCorrect">Is Correct ?</input> 
+			</td>
+			
+		</tr>
+	</table>
+	
+</div>

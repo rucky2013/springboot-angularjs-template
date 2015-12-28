@@ -1,0 +1,5 @@
+insert into Person(firstName,lastName) values('Roman','Ryabec')
+insert into Person(firstName,lastName) values('Roman','Ryabec')
+insert into Person(firstName,lastName) values('Roman','Ryabec')
+insert into Person(firstName,lastName) values('Roman','Ryabec')
+insert into Person(firstName,lastName) values('Roman','Ryabec')
