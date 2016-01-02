@@ -1,5 +1,28 @@
 <div class="row">
 	<div class="col-md-10">
-	
+		<table class="table">
+			<tr>
+				<td>
+					<input type="text" ng-model="person.firstName" placeholder = "firstname"/> 
+				</td>
+				<td>
+					<input type="text" ng-model="person.lastName" placeholder = "lastname"/>
+				</td>
+				<td>
+					<button ng-click="save()">save</button>
+				</td>
+			</tr>
+			<tr ng-repeat="p in people._embedded.person">
+				<td>
+					{{p.firstName}}
+				</td>
+				<td>
+					{{p.lastName}}
+				</td>
+				<td>
+					<span ng-click="delete(p)" class="like-link">delete</span>
+				</td>
+			</tr>
+		</table>
 	</div>
 </div>
