@@ -39,9 +39,40 @@ demoApp.controller('CrudCtrl',['$scope','Person',function($scope,Person){
 	
 }]);
 
+demoApp.controller('UpdateCtrl',['$scope','$routeParams','$location','Person',function($scope,$routeParams,$location,Person){
+	var param = {id: $routeParams.id};
+	$scope.person = Person.get(param,
+			function(){
+		console.log('Person loaded ...');
+	},
+			function(){
+		console.log('Failed load person');
+	});
+	
+	$scope.update = function(){
+		Person.save($scope.person,
+				function(){
+				$location.path('/');
+				console.log('person updated');
+				},
+				function(){console.log('failed update person');}
+				);
+	};
+	
+	$scope.cancel = function(){
+		$location.path('/');
+	};
+	
+	//console.log('Person id : ' + $routeParams.id);
+}]);
+
 demoApp.config(['$routeProvider',function($routeProvider){
 	$routeProvider.when('/',{
 		templateUrl: 'view/person.html',
 		controller: 'CrudCtrl'
+	}).
+	when('/update/:id',{
+		templateUrl: 'view/update_person.html',
+		controller: 'UpdateCtrl'
 	});
 }]);
