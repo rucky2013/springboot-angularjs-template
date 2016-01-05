@@ -26,9 +26,10 @@ demoApp.controller('CrudCtrl',['$scope','Person',function($scope,Person){
 	
 	$scope.delete = function(person){
 		console.log(person._links.self.href);
-		Person.delete(person._links.self.href,
+		Person.delete({id:person.id},
 				function(){
 			console.log("Success ...");
+			$scope.refresh();
 		},
 		function(){
 			console.log("Failed delete person");
