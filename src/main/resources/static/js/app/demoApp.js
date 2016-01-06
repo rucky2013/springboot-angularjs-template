@@ -62,8 +62,6 @@ demoApp.controller('UpdateCtrl',['$scope','$routeParams','$location','Person',fu
 	$scope.cancel = function(){
 		$location.path('/');
 	};
-	
-	//console.log('Person id : ' + $routeParams.id);
 }]);
 
 demoApp.config(['$routeProvider',function($routeProvider){
